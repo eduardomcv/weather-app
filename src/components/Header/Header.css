@@ -1,0 +1,13 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    background-color:#354552;
+}
+
+.heading {
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+}
