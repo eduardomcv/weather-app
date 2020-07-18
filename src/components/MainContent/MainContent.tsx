@@ -1,9 +1,10 @@
 import React, { FunctionComponent } from 'react';
-import './MainContent.css';
+import './MainContent.scss';
+import LocationSelector from '../LocationSelector';
 
 const MainContent: FunctionComponent = () => (
   <main className="main-content">
-    <div />
+    <LocationSelector />
   </main>
 );
 
