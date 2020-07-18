@@ -1,11 +1,12 @@
 {
-    "extends": [
-        "react-app",
-        "airbnb-typescript"
-    ],
-    "parserOptions": {
-        "project": "./tsconfig.json"
-    },
-    "rules": {
-    }
+  "extends": [
+    "react-app",
+    "airbnb-typescript"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "react/prop-types": "off"
+  }
 }
