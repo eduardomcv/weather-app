@@ -1,4 +1,7 @@
 .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #62798c;
     height: calc(100vh - 5rem); /* viewport height minus the height of the header */
 }
