@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+}
+
+.container > span {
+  padding: 0 1rem;
+  color: white;
+}
+
+.switch {
+  position: relative; /* so that the slider can fill it */
+  height: 1rem;
+  width: 2rem;
+  margin: 0 0.5rem; /* horizontal margin to take into account the slider's circle */
+}
+
+/* hide the default input */
+.switch > input {
+  display: none;
+}
+
+/* make the slider "fill" the parent */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #354552;
+  border-radius: 1rem;
+  transition: .2s;
+}
+
+/* the slider's circle */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.5rem;
+  width: 1.5rem;
+  left: -0.5rem;
+  bottom: -0.25rem;
+  background-color: #d46226;
+  transition: .2s;
+  border-radius: 50%;
+}
+
+/* target the circle when the input is checked and translate it horizontally */
+.switch > input:checked + .slider:before {
+  transform: translateX(1.5rem);
+}
