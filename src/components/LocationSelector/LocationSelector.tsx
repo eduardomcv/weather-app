@@ -1,8 +1,17 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, ChangeEventHandler } from 'react';
 import './LocationSelector.scss';
 
-const LocationSelector: FunctionComponent = () => (
-  <select className="location-selector">
+interface LocationSelectorProps {
+  onChange: ChangeEventHandler<HTMLSelectElement>;
+  value: string;
+}
+
+const LocationSelector: FunctionComponent<LocationSelectorProps> = ({ onChange, value }) => (
+  <select
+    className="location-selector"
+    onChange={onChange}
+    value={value}
+  >
     <option value="london">
       London
     </option>
