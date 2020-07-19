@@ -1,5 +1,5 @@
 import React, { FunctionComponent, ChangeEventHandler } from 'react';
-import './LocationSelector.scss';
+import './LocationSelector.css';
 import { Location } from '../../sharedTypes';
 
 interface LocationSelectorProps {

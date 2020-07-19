@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useState } from 'react';
 import LocationSelector from '../LocationSelector';
 import { TemperatureUnit, Location } from '../../sharedTypes';
-import './MainContent.scss';
+import './MainContent.css';
 
 const MainContent: FunctionComponent = () => {
   const [location, setLocation] = useState<Location>('lisbon');
