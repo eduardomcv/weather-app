@@ -1,9 +1,10 @@
 import React, { FunctionComponent, ChangeEventHandler } from 'react';
 import './LocationSelector.scss';
+import { Location } from '../../sharedTypes';
 
 interface LocationSelectorProps {
   onChange: ChangeEventHandler<HTMLSelectElement>;
-  value: string;
+  value: Location;
 }
 
 const LocationSelector: FunctionComponent<LocationSelectorProps> = ({ onChange, value }) => (
