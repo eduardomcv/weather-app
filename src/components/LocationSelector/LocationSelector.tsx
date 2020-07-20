@@ -1,16 +1,16 @@
-import React, { FunctionComponent, ChangeEventHandler } from 'react';
+import React, { FunctionComponent } from 'react';
 import { Location } from '../../sharedTypes';
 import './LocationSelector.css';
 
 interface LocationSelectorProps {
-  onChange: ChangeEventHandler<HTMLSelectElement>;
+  onChange: (location: Location) => void;
   value: Location;
 }
 
 const LocationSelector: FunctionComponent<LocationSelectorProps> = ({ onChange, value }) => (
   <select
     className="location-selector"
-    onChange={onChange}
+    onChange={(event) => onChange(event.target.value as Location)}
     value={value}
   >
     <option value="london">
