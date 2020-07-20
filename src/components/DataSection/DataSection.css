@@ -1,0 +1,33 @@
+.data-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-size: 8rem;
+  font-weight: bold;
+}
+
+.data-section.placeholder {
+  font-size: 3rem;
+}
+
+.weather-icon {
+  margin-top: 2rem;
+  height: 8rem;
+  width: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .data-section {
+    font-size: 6rem;
+  }
+
+  .weather-icon {
+    margin-top: 1rem;
+    height: 6rem;
+    width: auto;
+  }
+} 
