@@ -4,6 +4,8 @@ import useOpenWeatherQuery from '../../hooks/useOpenWeather';
 import './DataSection.css';
 import { OPEN_WEATHER_ICONS_ENDPOINT } from '../../config';
 
+const ICON_EXTENSION = '@2x.png';
+
 interface DataSectionProps {
   selectedLocation: Location;
   selectedTemperatureUnit: TemperatureUnit;
@@ -56,7 +58,7 @@ const DataSection: FunctionComponent<DataSectionProps> = ({
         <img
           className="weather-icon"
           alt="weather-icon"
-          src={`${OPEN_WEATHER_ICONS_ENDPOINT}${weatherIcon}@2x.png`}
+          src={`${OPEN_WEATHER_ICONS_ENDPOINT}${weatherIcon}${ICON_EXTENSION}`}
         />
       </div>
       <div className="day-cycle">
