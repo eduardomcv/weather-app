@@ -1,3 +1,20 @@
+# Weather app
+
+![app-screenshot](./app-screenshot.png)
+
+A simple weather app for [advertio](https://advertio.com/)'s react exercise, using the OpenWeather API.
+
+You must provide your own API key. Simply run: `REACT_APP_API_KEY={YOUR API KEY HERE} npm start`
+
+## Requirements:
+- [x] display the current temperature in a specific city (e.g.: 18 °C);
+- [x] the display must include an icon representing the weather (e.g.: a sun);
+- [x] the sunrise and sunset time in local time (e.g.: 7:43 and 18:55);
+- [x] switch to toggle the temperature value between Celsius and Fahrenheit;
+- [x] select with at least 3 cities, so we can check the weather there.
+
+<hr>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
