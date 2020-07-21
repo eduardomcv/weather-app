@@ -39,20 +39,30 @@ const DataSection: FunctionComponent<DataSectionProps> = ({
     );
   }
 
-  const { main, weather } = data;
+  const { main, weather, sys } = data;
 
   const tempValue = main.temp.toFixed();
   const tempSymbol = selectedTemperatureUnit === 'celsius' ? '°C' : '°F';
   const weatherIcon = weather[0].icon; // first element is the "primary"
 
+  // convert to UNIX timestamp with miliseconds
+  const sunriseDate = new Date(sys.sunrise * 1000).toLocaleTimeString();
+  const sunsetDate = new Date(sys.sunset * 1000).toLocaleTimeString();
+
   return (
     <section className="data-section">
-      <span>{`${tempValue} ${tempSymbol}`}</span>
-      <img
-        className="weather-icon"
-        alt="weather-icon"
-        src={`${OPEN_WEATHER_ICONS_ENDPOINT}${weatherIcon}@2x.png`}
-      />
+      <div className="temperature-display">
+        <span>{`${tempValue} ${tempSymbol}`}</span>
+        <img
+          className="weather-icon"
+          alt="weather-icon"
+          src={`${OPEN_WEATHER_ICONS_ENDPOINT}${weatherIcon}@2x.png`}
+        />
+      </div>
+      <div className="day-cycle">
+        <span>{`Sunrise: ${sunriseDate}`}</span>
+        <span>{`Sunset: ${sunsetDate}`}</span>
+      </div>
     </section>
   );
 };
