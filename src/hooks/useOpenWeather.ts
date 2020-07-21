@@ -12,7 +12,7 @@ interface QueryStringArgs {
   temperatureUnit: TemperatureUnit;
 }
 
-interface UseOpenWeatherQueryResult {
+interface UseOpenWeatherResult {
   loading: boolean;
   error?: Error;
   data?: WeatherAPIData;
@@ -69,10 +69,10 @@ async function fetchOpenWeatherData(fetchArgs: QueryStringArgs): Promise<Weather
   return resData;
 }
 
-export default function useOpenWeatherQuery({
+export default function useOpenWeather({
   temperatureUnit,
   location,
-}: QueryStringArgs): UseOpenWeatherQueryResult {
+}: QueryStringArgs): UseOpenWeatherResult {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error>();
   const [data, setData] = useState<WeatherAPIData>();

@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { TemperatureUnit, Location } from '../../sharedTypes';
-import useOpenWeatherQuery from '../../hooks/useOpenWeather';
+import useOpenWeather from '../../hooks/useOpenWeather';
 import './DataSection.css';
 import { OPEN_WEATHER_ICONS_ENDPOINT } from '../../config';
 
@@ -27,7 +27,7 @@ const DataSection: FunctionComponent<DataSectionProps> = ({
     data,
     error,
     loading,
-  } = useOpenWeatherQuery({
+  } = useOpenWeather({
     location: selectedLocation,
     temperatureUnit: selectedTemperatureUnit,
   });
