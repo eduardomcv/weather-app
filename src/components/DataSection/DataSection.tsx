@@ -6,6 +6,14 @@ import { OPEN_WEATHER_ICONS_ENDPOINT } from '../../config';
 
 const ICON_EXTENSION = '@2x.png';
 
+function getDateString(unixTimestamp: number) {
+  // convert UNIX timestamp to miliseconds
+  const timestamp = unixTimestamp * 1000;
+
+  // return localized time string
+  return new Date(timestamp).toLocaleTimeString();
+}
+
 interface DataSectionProps {
   selectedLocation: Location;
   selectedTemperatureUnit: TemperatureUnit;
@@ -47,9 +55,8 @@ const DataSection: FunctionComponent<DataSectionProps> = ({
   const tempSymbol = selectedTemperatureUnit === 'celsius' ? '°C' : '°F';
   const weatherIcon = weather[0].icon; // first element is the "primary"
 
-  // convert to UNIX timestamp with miliseconds
-  const sunriseDate = new Date(sys.sunrise * 1000).toLocaleTimeString();
-  const sunsetDate = new Date(sys.sunset * 1000).toLocaleTimeString();
+  const sunriseDateString = getDateString(sys.sunrise);
+  const sunsetDateString = getDateString(sys.sunset);
 
   return (
     <section className="data-section">
@@ -62,8 +69,8 @@ const DataSection: FunctionComponent<DataSectionProps> = ({
         />
       </div>
       <div className="day-cycle">
-        <span>{`Sunrise: ${sunriseDate}`}</span>
-        <span>{`Sunset: ${sunsetDate}`}</span>
+        <span>{`Sunrise: ${sunriseDateString}`}</span>
+        <span>{`Sunset: ${sunsetDateString}`}</span>
       </div>
     </section>
   );
