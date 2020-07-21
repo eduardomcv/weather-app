@@ -34,6 +34,7 @@ interface WeatherCondition {
   icon: string;
 }
 
+// for now, only wrote types for what i need
 interface WeatherAPIData {
   main: Main;
   sys: System;
