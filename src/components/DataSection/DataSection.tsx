@@ -51,7 +51,7 @@ const DataSection: FunctionComponent<DataSectionProps> = ({
 
   const { main, weather, sys } = data;
 
-  const tempValue = main.temp.toFixed();
+  const tempValue = main.temp.toFixed(1);
   const tempSymbol = selectedTemperatureUnit === 'celsius' ? '°C' : '°F';
   const weatherIcon = weather[0].icon; // first element is the "primary"
 
