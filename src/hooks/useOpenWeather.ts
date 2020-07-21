@@ -15,7 +15,7 @@ interface QueryStringArgs {
 interface UseOpenWeatherQueryResult {
   loading: boolean;
   error?: Error;
-  data?: WeatherAPIData; // FIXME
+  data?: WeatherAPIData;
 }
 
 interface Main {
